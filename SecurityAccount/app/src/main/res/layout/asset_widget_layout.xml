@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Spinner
+        android:id="@+id/security_account_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:dropDownVerticalOffset="30dp"
+        android:layout_alignParentRight="true"/>
+
+
+    <View
+        android:id="@+id/split_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/security_account_spinner"
+        android:background="#33000000" />
+
+    <TextView
+        android:id="@+id/asset_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/split_line"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:text="资产净值(港元)"
+        android:drawablePadding="2dp"
+        android:drawableLeft="@drawable/icon_show_flat"/>
+
+    <TextView
+        android:id="@+id/today_profit_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/split_line"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:gravity="right"
+        android:text="今日盈亏"
+        android:drawablePadding="2dp"
+        android:drawableLeft="@drawable/icon_share"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/asset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/asset_title"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="5dp"
+        android:text="00.00"
+        android:maxLines="1"
+        android:textSize="36sp"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMaxTextSize="36sp"
+        app:autoSizeMinTextSize="30sp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/today_profit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/today_profit_title"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:gravity="right"
+        android:text="+0.00"
+        android:maxLines="1"
+        android:textSize="20sp"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMaxTextSize="20sp"
+        app:autoSizeMinTextSize="12sp"/>
+
+    <TextView
+        android:id="@+id/today_profit_ratio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/today_profit"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="2dp"
+        android:gravity="right"
+        android:text="+0.00%"
+        android:maxLines="1"
+        android:textSize="16sp"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMaxTextSize="16sp"
+        app:autoSizeMinTextSize="10sp"/>
+
+</RelativeLayout>

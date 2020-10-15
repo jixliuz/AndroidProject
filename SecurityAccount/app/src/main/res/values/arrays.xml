@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <array name="function_item_icon_hk">
+        <item>@drawable/icon_trade</item>
+        <item>@drawable/icon_condition_trade</item>
+        <item>@drawable/icon_trade_history</item>
+        <item>@drawable/icon_deposit_funds</item>
+        <item>@drawable/icon_currency_exchange</item>
+        <item>@drawable/icon_capital_management</item>
+        <item>@drawable/icon_ipo_subscription</item>
+        <item>@drawable/icon_capital_flow</item>
+        <item>@drawable/icon_my_statement</item>
+        <item>@drawable/icon_total</item>
+    </array>
+    <string-array name="function_item_text_hk">
+        <item>&#8195;交易&#8195;</item>
+        <item>条件交易</item>
+        <item>交易历史</item>
+        <item>存入资金</item>
+        <item>货币兑换</item>
+        <item>基金理财</item>
+        <item>新股认购</item>
+        <item>资金流水</item>
+        <item>我的结单</item>
+        <item>&#8195;全部&#8195;</item>
+    </string-array>
+
+    <string-array name="function_item_text_usa">
+        <item>&#8195;交易&#8195;</item>
+        <item>条件交易</item>
+        <item>订单记录</item>
+        <item>存入资金</item>
+        <item>提取资金</item>
+        <item>货币兑换</item>
+        <item>资金明细</item>
+        <item>转让股票</item>
+        <item>我的结单</item>
+        <item>&#8195;全部&#8195;</item>
+    </string-array>
+
+    <array name="function_item_icon_usa">
+        <item>@drawable/icon_trade</item>
+        <item>@drawable/icon_condition_trade</item>
+        <item>@drawable/icon_order_record</item>
+        <item>@drawable/icon_deposit_funds</item>
+        <item>@drawable/icon_withdraw_funds</item>
+        <item>@drawable/icon_currency_exchange</item>
+        <item>@drawable/icon_funds_detail</item>
+        <item>@drawable/icon_transfer_stock</item>
+        <item>@drawable/icon_my_statement</item>
+        <item>@drawable/icon_total</item>
+    </array>
+
+    <string-array name="function_item_text_cn">
+        <item>&#8195;交易&#8195;</item>
+        <item>订单记录</item>
+        <item>存入资金</item>
+        <item>提取资金</item>
+        <item>&#8195;全部&#8195;</item>
+    </string-array>
+
+    <array name="function_item_icon_cn">
+        <item>@drawable/icon_trade</item>
+        <item>@drawable/icon_order_record</item>
+        <item>@drawable/icon_deposit_funds</item>
+        <item>@drawable/icon_withdraw_funds</item>
+        <item>@drawable/icon_total</item>
+    </array>
+
+    <string-array name="share_item_text">
+        <item>盈亏金额</item>
+        <item>盈亏比例</item>
+    </string-array>
+    <array name="share_item_icon">
+        <item>@drawable/icon_share_trade</item>
+        <item>@drawable/icon_share_profit</item>
+    </array>
+</resources>

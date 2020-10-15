@@ -1,0 +1,128 @@
+{
+  "港股": [
+    {
+      "accountId": "1001 1001 0011 2816",
+      "type": "CASH",
+      "accountType": "港股",
+      "asset": 1009133.74,
+      "todayProfit": -2110.50,
+      "todayProfitRatio": -2.53,
+      "marketValue": 967750.75,
+      "cash": 41392.80,
+      "maxPurchase": 40960.16,
+      "amountOwed": 0.00,
+      "frozenCash": 138.02,
+      "availableCash": 40542.07,
+      "riskLevel": ""
+    },
+    {
+      "accountId": "1001 1001 2008 9697",
+      "type": "CASH",
+      "accountType": "港股",
+      "asset": 89.00,
+      "todayProfit": 0.00,
+      "todayProfitRatio": 0.00,
+      "marketValue": 0.00,
+      "cash": 89.00,
+      "maxPurchase": 89.00,
+      "amountOwed": 0.00,
+      "frozenCash": 0.00,
+      "availableCash": 89.00,
+      "riskLevel": ""
+    },
+    {
+      "accountId": "1001 1001 0010 0016",
+      "type": "MARGIN",
+      "accountType": "港股",
+      "asset": 2125761.56,
+      "todayProfit": 300.79,
+      "todayProfitRatio": 0.00,
+      "marketValue": 60286.35,
+      "maxPurchase": 989654.10,
+      "riskLevel": "较低风险",
+      "cash": 99999.00,
+      "frozenCash": 457492.58,
+      "availableCash": 999774.00,
+      "amountOwed": 0.00
+    },
+    {
+      "accountId": "1001 1001 0010 0316",
+      "type": "MARGIN",
+      "accountType": "港股",
+      "asset": 123466.00,
+      "todayProfit": 894.20,
+      "todayProfitRatio": 0.49,
+      "marketValue": 1372373.00,
+      "maxPurchase": 27138.17,
+      "riskLevel": "非常安全",
+      "cash": 42699.89,
+      "frozenCash": 13306.28,
+      "availableCash": 27067.17,
+      "amountOwed": 0.00
+    }
+  ],
+  "美股": [
+    {
+      "accountId": "1001 1001 1011 2816",
+      "type": "CASH",
+      "accountType": "美股",
+      "asset": 1974443.70,
+      "todayProfit": 31.10,
+      "todayProfitRatio": 0.00,
+      "marketValue": 2667.90,
+      "cash": 1971776.67,
+      "maxPurchase": 1413720.27,
+      "amountOwed": 0.00,
+      "frozenCash": 558056.39,
+      "availableCash": 1413720.27,
+      "riskLevel": ""
+    },
+     {
+      "accountId": "1001 1001 2005 7146",
+      "type": "CASH",
+      "accountType": "美股",
+      "asset": 2000000.00,
+      "todayProfit": 0.00,
+      "todayProfitRatio": 0.00,
+      "marketValue": 0.00,
+      "cash": 2000000.00,
+      "maxPurchase": 10.00,
+      "amountOwed": 0.00,
+      "frozenCash": 0.00,
+      "availableCash": 2000000.00,
+      "riskLevel": ""
+    },
+     {
+      "accountId": "1001 1001 9001 3590",
+      "type": "MARGIN",
+      "accountType": "美股",
+      "asset": 1657497.20,
+      "todayProfit": -14256.48,
+      "todayProfitRatio": -12.87,
+      "marketValue": 1657315.80,
+      "maxPurchase": 0.00,
+      "riskLevel": "较安全",
+      "cash": 181.40,
+      "frozenCash": 189.86,
+      "availableCash": 0.00,
+      "amountOwed": 0.00
+    }
+  ],
+  "A股": [
+    {
+      "accountId": "1001 1006 60001 0360",
+      "type": "",
+      "accountType": "A股",
+      "asset":1002320.00,
+      "todayProfit": 3600.00,
+      "todayProfitRatio": 2.6,
+      "marketValue": 23220.00,
+      "maxPurchase": 23999899.01,
+      "riskLevel": "较低风险",
+      "cash": 10000000.00,
+      "frozenCash": 100.99,
+      "availableCash": 999899.01,
+      "amountOwed": 0.00
+    }
+  ]
+}

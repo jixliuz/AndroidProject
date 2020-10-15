@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/share_item_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:src="@drawable/static_share_cartoon_01"/>
+
+    <TextView
+        android:id="@+id/share_item_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="今日港股盈亏金额"
+        android:gravity="center"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+        <TextView
+            android:id="@+id/share_value_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/share_value"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:text="+"/>
+
+        <LinearLayout
+            android:id="@+id/share_value"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:id="@+id/share_value_big_num"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="0."
+                android:textSize="22sp"/>
+            <TextView
+                android:id="@+id/share_value_small_num"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="6dp"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:text="00"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/share_item_currency_type"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/share_value"
+            android:text="港元"
+            android:textSize="18sp"
+            android:gravity="center" />
+
+    </RelativeLayout>
+</LinearLayout>

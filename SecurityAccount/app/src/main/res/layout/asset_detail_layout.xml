@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/detail_cash_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:alignContent="space_between"
+            app:alignItems="flex_start"
+            app:flexWrap="wrap"
+            app:justifyContent="space_between">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="证券市值"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="20dp"
+                android:text="现金"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="最大购买力"
+                android:paddingRight="20dp"
+                android:drawableRight="@drawable/icon_unite"
+                android:maxLines="1"
+                app:autoSizeMaxTextSize="15sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeTextType="uniform"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:id="@+id/cash_market_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="----"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:id="@+id/cash_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="----"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:id="@+id/cash_max_purchase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="----"
+                app:layout_flexBasisPercent="30%" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:text="欠款金额"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="冻结资金"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="现金可提"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:id="@+id/cash_amount_owned"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="10dp"
+                android:text="----"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:id="@+id/frozen_cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="----"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:id="@+id/cash_available"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="----"
+                app:layout_flexBasisPercent="30%" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/cash_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_arrow_jump" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detail_margin_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone">
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:alignContent="space_between"
+            app:alignItems="flex_start"
+            app:flexWrap="wrap"
+            app:justifyContent="space_between">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="证券市值"
+                app:layout_flexBasisPercent="30%" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_unite"
+                android:paddingRight="20dp"
+                android:text="最大购买力"
+                android:maxLines="1"
+                app:autoSizeMaxTextSize="15sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeTextType="uniform"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_risk_tip"
+                android:paddingRight="30dp"
+                android:text="风控状态"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:id="@+id/margin_market_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="----"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:id="@+id/margin_max_purchase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="----"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:id="@+id/risk_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="---"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:text="现金"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="冻结资金"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="现金可提"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:id="@+id/margin_cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="10dp"
+                android:text="----"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:id="@+id/margin_frozen_cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="----"
+                app:layout_flexBasisPercent="30%" />
+
+            <TextView
+                android:id="@+id/margin_cash_available"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="----"
+                app:layout_flexBasisPercent="30%" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/margin_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_arrow_jump" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
