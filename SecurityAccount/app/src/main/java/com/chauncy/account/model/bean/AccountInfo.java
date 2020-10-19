@@ -1,4 +1,4 @@
-package com.chauncy.account.model;
+package com.chauncy.account.model.bean;
 
 public class AccountInfo {
     private String accountType;

@@ -18,6 +18,7 @@ import com.chauncy.account.common.recyclerview.ViewHolder;
 import com.chauncy.account.model.bean.AccountOrder;
 import com.chauncy.account.utils.AccountConstant;
 import com.chauncy.account.utils.AccountHelper;
+import com.chauncy.account.utils.Global;
 import com.chauncy.account.utils.SettingInfoManager;
 
 
@@ -29,6 +30,7 @@ public class TodayOrderWrapper {
     private RecyclerView orderRecyclerView;
     private OrderAdapter adapter;
 
+    private TextView orderTotalView;
     private View popInfoView;
     private TextView totalView;
     private TextView pendingView;
@@ -55,11 +57,11 @@ public class TodayOrderWrapper {
         pendingView = popInfoView.findViewById(R.id.pop_window_pendingDeal);
         dealView = popInfoView.findViewById(R.id.pop_window_deal);
         cancelView = popInfoView.findViewById(R.id.pop_window_order_cancel);
-        final TextView order_total = viewHolder.getView(R.id.order_total);
-        order_total.setOnClickListener(new View.OnClickListener() {
+        orderTotalView = viewHolder.getView(R.id.order_total);
+        orderTotalView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showPopWindow(viewHolder.getContext(), order_total);
+                showPopWindow(viewHolder.getContext(), orderTotalView);
             }
         });
 
@@ -74,10 +76,12 @@ public class TodayOrderWrapper {
             refreshPopTitle(orderList);
             adapter.refreshData(orderList);
         }
+        orderTotalView.setText(Global.getString(R.string.string_text_total));
     }
 
     public void refreshOrderShowInfo() {
         adapter.refreshInfoShow();
+        orderTotalView.setText(Global.getString(R.string.string_text_total));
     }
 
     private void refreshPopTitle(List<AccountOrder> orderList) {
@@ -96,10 +100,10 @@ public class TodayOrderWrapper {
             }
         }
         int total = pending + deal + cancel;
-        totalView.setText("全部(" + total + ")");
-        pendingView.setText("待提交(" + pending + ")");
-        dealView.setText("已成交(" + deal + ")");
-        cancelView.setText("已撤单(" + cancel + ")");
+        totalView.setText(Global.getString(R.string.string_text_total)+"(" + total + ")");
+        pendingView.setText(Global.getString(R.string.string_text_pendingSubmit)+"(" + pending + ")");
+        dealView.setText(Global.getString(R.string.string_text_submitted)+"(" + deal + ")");
+        cancelView.setText(Global.getString(R.string.string_text_cancelled)+"(" + cancel + ")");
     }
 
     private void showPopWindow(final Context context, View parent) {
@@ -110,6 +114,7 @@ public class TodayOrderWrapper {
             @Override
             public void onClick(View v) {
                 adapter.refreshData(mOrderList);
+                orderTotalView.setText(Global.getString(R.string.string_text_total));
                 popWindow.dismiss();
             }
         });
@@ -118,6 +123,7 @@ public class TodayOrderWrapper {
             @Override
             public void onClick(View v) {
                 List<AccountOrder> orderList = AccountHelper.filter(mOrderList, "等待提交");
+                orderTotalView.setText(Global.getString(R.string.string_text_pendingSubmit));
                 adapter.refreshData(orderList);
                 popWindow.dismiss();
             }
@@ -127,6 +133,7 @@ public class TodayOrderWrapper {
             @Override
             public void onClick(View v) {
                 List<AccountOrder> orderList = AccountHelper.filter(mOrderList, "已提交");
+                orderTotalView.setText(Global.getString(R.string.string_text_submitted));
                 adapter.refreshData(orderList);
                 popWindow.dismiss();
             }
@@ -136,6 +143,7 @@ public class TodayOrderWrapper {
             @Override
             public void onClick(View v) {
                 List<AccountOrder> orderList = AccountHelper.filter(mOrderList, "已撤单");
+                orderTotalView.setText(Global.getString(R.string.string_text_cancelled));
                 adapter.refreshData(orderList);
                 popWindow.dismiss();
             }

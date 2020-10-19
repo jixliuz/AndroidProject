@@ -1,4 +1,4 @@
-package com.chauncy.account.model.bean;
+package com.chauncy.account.model;
 
 public class IconText {
     private int imageId;

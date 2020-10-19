@@ -220,8 +220,7 @@ enum class ShareType{
 }
 
 data class ShareInfo(val shareType: ShareType,val accountId:String,val profit:Double
-                     ,val profitRatio: Double, val accountType:String,val time:Date) {
-}
+                     ,val profitRatio: Double, val accountType:String,val time:Date)
 
 class ShareConstant{
     companion object{

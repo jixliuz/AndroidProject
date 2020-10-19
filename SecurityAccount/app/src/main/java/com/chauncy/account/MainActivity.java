@@ -10,7 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
-import com.chauncy.account.fragment.SecuritiesAccountFragment;
+import com.chauncy.account.fragment.SecurityAccountFragment;
 import com.chauncy.account.model.AccountDataCenter;
 import com.chauncy.account.model.DbDataCenter;
 import com.chauncy.account.utils.AccountConstant;
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 FragmentPagerAdapter adapter= (FragmentPagerAdapter) viewPager.getAdapter();
-                SecuritiesAccountFragment fragment= (SecuritiesAccountFragment) adapter.getItem(position);
+                SecurityAccountFragment fragment= (SecurityAccountFragment) adapter.getItem(position);
                 fragment.refreshData();
             }
 
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         private void initFragment(String[] tabs) {
             for(String tab : tabs){
-                mFragments.add(SecuritiesAccountFragment.newInstance(tab));
+                mFragments.add(SecurityAccountFragment.newInstance(tab));
             }
         }
 

@@ -44,7 +44,6 @@ abstract class FragmentLifecycleHandler {
         lifecycleOwner = WeakReference(fragment)
 
         fragment.lifecycle.addObserver(lifecycleObserver)
-
     }
 
     fun unsubscribeLifecycle() {

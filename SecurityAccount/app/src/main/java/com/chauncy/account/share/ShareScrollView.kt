@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.chauncy.account.R
 import com.chauncy.account.common.recyclerview.RecyclerViewClickListener
 import com.chauncy.account.common.recyclerview.ViewHolder
-import com.chauncy.account.model.bean.IconText
+import com.chauncy.account.model.IconText
 import com.chauncy.account.utils.Global
 
 class ShareScrollView @JvmOverloads constructor(
@@ -62,11 +62,11 @@ class ShareScrollView @JvmOverloads constructor(
 
         private fun getIconText(shareItem: ShareItem): IconText {
             return when(shareItem){
-                ShareItem.PROFIT_RATIO -> IconText(R.drawable.static_share_icon_persent,Global.getString(R.string.text_profit_amount))
-                ShareItem.PROFIT_AMOUNT -> IconText(R.drawable.static_share_icon_money,Global.getString(R.string.text_profit_amount))
-                ShareItem.TRADE_AMOUNT -> IconText(R.drawable.static_share_icon_amount,Global.getString(R.string.text_trade_amount))
-                ShareItem.POSITION_LIST -> IconText(R.drawable.static_share_icon_list5,Global.getString(R.string.text_position_list))
-                else -> IconText(R.drawable.static_share_icon_stock,Global.getString(R.string.text_stock_name))
+                ShareItem.PROFIT_RATIO -> IconText(R.drawable.static_share_icon_persent, Global.getString(R.string.text_profit_amount))
+                ShareItem.PROFIT_AMOUNT -> IconText(R.drawable.static_share_icon_money, Global.getString(R.string.text_profit_amount))
+                ShareItem.TRADE_AMOUNT -> IconText(R.drawable.static_share_icon_amount, Global.getString(R.string.text_trade_amount))
+                ShareItem.POSITION_LIST -> IconText(R.drawable.static_share_icon_list5, Global.getString(R.string.text_position_list))
+                else -> IconText(R.drawable.static_share_icon_stock, Global.getString(R.string.text_stock_name))
             }
         }
 

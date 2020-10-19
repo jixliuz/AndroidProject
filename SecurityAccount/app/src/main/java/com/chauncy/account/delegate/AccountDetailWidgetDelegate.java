@@ -7,8 +7,8 @@ import com.chauncy.account.R;
 import com.chauncy.account.common.event.AccountEventHandler;
 import com.chauncy.account.common.event.Observer;
 import com.chauncy.account.model.AccountDataCenter;
-import com.chauncy.account.model.AccountInfo;
-import com.chauncy.account.model.SecurityAccount;
+import com.chauncy.account.model.bean.AccountInfo;
+import com.chauncy.account.model.bean.SecurityAccount;
 import com.chauncy.account.utils.AccountConstant;
 import com.chauncy.account.model.AccountBaseModel;
 import com.chauncy.account.common.recyclerview.ItemViewDelegate;
@@ -20,9 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 
 public class AccountDetailWidgetDelegate implements ItemViewDelegate<AccountBaseModel> {
-    private int layoutId;
     private ViewHolder mViewHolder;
-    private AccountBaseModel mBaseModel;
     private SecurityAccount mAccount;
 
     private LinearLayout cashLayout;
@@ -45,13 +43,10 @@ public class AccountDetailWidgetDelegate implements ItemViewDelegate<AccountBase
         }
     };
 
-    public AccountDetailWidgetDelegate() {
-        layoutId = R.layout.asset_detail_layout;
-    }
 
     @Override
     public int getItemViewLayoutId() {
-        return layoutId;
+        return R.layout.asset_detail_layout;
     }
 
     @Override
@@ -60,10 +55,9 @@ public class AccountDetailWidgetDelegate implements ItemViewDelegate<AccountBase
     }
 
     @Override
-    public void convert(ViewHolder holder, AccountBaseModel accountBaseModel, int position) {
+    public void convert(ViewHolder holder, AccountBaseModel baseModel, int position) {
         mViewHolder = holder;
-        mBaseModel = accountBaseModel;
-        mAccount = mBaseModel.getAccount();
+        mAccount = baseModel.getAccount();
         if (!isInited) {
             isInited = true;
             AccountEventHandler.get().subject(observer);

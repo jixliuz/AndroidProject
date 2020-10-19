@@ -13,10 +13,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chauncy.account.R;
-import com.chauncy.account.model.SecurityAccount;
+import com.chauncy.account.model.bean.SecurityAccount;
 import com.chauncy.account.utils.AccountConstant;
 import com.chauncy.account.model.AccountBaseModel;
-import com.chauncy.account.model.bean.IconText;
+import com.chauncy.account.model.IconText;
 import com.chauncy.account.common.recyclerview.ItemViewDelegate;
 import com.chauncy.account.common.recyclerview.MultiItemViewAdapter;
 import com.chauncy.account.common.recyclerview.ViewHolder;
@@ -28,7 +28,6 @@ import java.util.List;
 
 public class FunctionWidgetDelegate implements ItemViewDelegate<AccountBaseModel> {
 
-    private int layoutId = R.layout.function_widget_layout;
     private int recyclerViewId = R.id.function_recyclerView;
 
     private SecurityAccount mAccount;
@@ -42,7 +41,7 @@ public class FunctionWidgetDelegate implements ItemViewDelegate<AccountBaseModel
 
     @Override
     public int getItemViewLayoutId() {
-        return layoutId;
+        return R.layout.function_widget_layout;
     }
 
     @Override
@@ -51,9 +50,9 @@ public class FunctionWidgetDelegate implements ItemViewDelegate<AccountBaseModel
     }
 
     @Override
-    public void convert(ViewHolder holder, AccountBaseModel accountBaseModel, int position) {
+    public void convert(ViewHolder holder, AccountBaseModel baseModel, int position) {
         Context context = holder.getContext();
-        mAccount = accountBaseModel.getAccount();
+        mAccount = baseModel.getAccount();
         List<IconText> iconTexts = AccountHelper.getFunctionItemsIconText(mAccount.getAccountType());
         if(!isInited) {
             isInited=true;

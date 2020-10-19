@@ -1,10 +1,16 @@
-package com.chauncy.account.model;
+package com.chauncy.account.model.bean;
 
 public class SecurityAccount {
     private String id;
     private String accountType;
     private boolean isInfoShow = false;
     private int eventType = -1;
+
+    public interface IAction {
+        int ACCOUNT_CHANGE = 101;
+        int INFO_STATE_CHANGE = 102;
+
+    }
 
     public SecurityAccount(String accountType) {
         this.accountType = accountType;
@@ -41,11 +47,7 @@ public class SecurityAccount {
         isInfoShow = isShow;
     }
 
-    public interface IAction {
-        int ACCOUNT_CHANGE = 101;
-        int INFO_STATE_CHANGE = 102;
 
-    }
 
     public int getEventType() {
         return eventType;

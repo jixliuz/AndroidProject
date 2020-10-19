@@ -11,7 +11,7 @@ import com.chauncy.account.common.event.AccountEventHandler;
 import com.chauncy.account.common.event.Observer;
 import com.chauncy.account.delegate.wrapper.AccountPositionWrapper;
 import com.chauncy.account.model.DbDataCenter;
-import com.chauncy.account.model.SecurityAccount;
+import com.chauncy.account.model.bean.SecurityAccount;
 import com.chauncy.account.model.bean.AccountOrder;
 import com.chauncy.account.model.bean.Position;
 import com.chauncy.account.utils.AccountConstant;
@@ -27,12 +27,10 @@ import java.util.List;
 
 public class PositionOrderWidgetDelegate implements ItemViewDelegate<AccountBaseModel> {
 
-    private int layoutId;
     private ViewHolder viewHolder;
 
     private int selectedColor = 0XFFFF8800;
     private int noSelectedColor = Color.GRAY;
-    private AccountBaseModel baseModel;
     private SecurityAccount mAccount;
 
     private boolean isInited = false;
@@ -91,13 +89,9 @@ public class PositionOrderWidgetDelegate implements ItemViewDelegate<AccountBase
         tabPosition.setText("持仓(" + amount + ")");
     }
 
-    public PositionOrderWidgetDelegate() {
-        layoutId = R.layout.position_order_tab_layout;
-    }
-
     @Override
     public int getItemViewLayoutId() {
-        return layoutId;
+        return R.layout.position_order_tab_layout;
     }
 
     @Override
@@ -106,8 +100,7 @@ public class PositionOrderWidgetDelegate implements ItemViewDelegate<AccountBase
     }
 
     @Override
-    public void convert(ViewHolder holder, AccountBaseModel accountBaseModel, int position) {
-        baseModel = accountBaseModel;
+    public void convert(ViewHolder holder, AccountBaseModel baseModel, int position) {
         mAccount = baseModel.getAccount();
         viewHolder = holder;
         List<Position> positionList = DbDataCenter.get().getAccountPosition(mAccount.getAccountID());

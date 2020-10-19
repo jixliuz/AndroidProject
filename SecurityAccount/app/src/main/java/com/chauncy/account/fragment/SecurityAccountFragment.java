@@ -16,45 +16,54 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.chauncy.account.R;
 import com.chauncy.account.common.recyclerview.MultiItemViewAdapter;
-import com.chauncy.account.common.recyclerview.ViewHolder;
 import com.chauncy.account.delegate.AccountDetailWidgetDelegate;
 import com.chauncy.account.delegate.AssetWidgetDelegate;
 import com.chauncy.account.delegate.FunctionWidgetDelegate;
 import com.chauncy.account.delegate.PositionOrderWidgetDelegate;
-import com.chauncy.account.model.SecurityAccount;
+import com.chauncy.account.model.bean.SecurityAccount;
 import com.chauncy.account.utils.AccountConstant;
 import com.chauncy.account.model.AccountBaseModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SecuritiesAccountFragment extends Fragment {
+public class SecurityAccountFragment extends Fragment {
     private String mAccountType;
-    private SecuritiesAccountAdapter mAccountAdapter;
+    private SecurityAccountAdapter mAccountAdapter;
     private List<AccountBaseModel> mBaseModels;
+    private boolean isInited=false;
+    private View root;
 
-    private SecuritiesAccountFragment(String accountType) {
+    private SecurityAccountFragment(String accountType) {
         mAccountType = accountType;
         mBaseModels=initWidgetDelegate();
     }
 
     public static Fragment newInstance(String accountType) {
-        return new SecuritiesAccountFragment(accountType);
+        return new SecurityAccountFragment(accountType);
     }
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-            View view = inflater.inflate(R.layout.security_account_layout, container, false);
-           Context context = inflater.getContext();
-           RecyclerView mRecyclerView = view.findViewById(R.id.security_account_recyclerView);
-           LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-           mRecyclerView.setLayoutManager(linearLayoutManager);
-           mAccountAdapter = new SecuritiesAccountAdapter(context, mBaseModels);
-           mRecyclerView.setAdapter(mAccountAdapter);
-           return view;
+           if(!isInited)
+           {
+               isInited=true;
+               root = inflater.inflate(R.layout.security_account_layout, container, false);
+               Context context = inflater.getContext();
+               RecyclerView mRecyclerView = root.findViewById(R.id.security_account_recyclerView);
+               LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+               mRecyclerView.setLayoutManager(linearLayoutManager);
+               mAccountAdapter = new SecurityAccountAdapter(context, mBaseModels);
+               mRecyclerView.setAdapter(mAccountAdapter);
+           }else {
+              refreshData();
+           }
+           return root;
     }
+
+
 
     private List<AccountBaseModel> initWidgetDelegate() {
         List<AccountBaseModel> data = new ArrayList<>();
@@ -71,21 +80,13 @@ public class SecuritiesAccountFragment extends Fragment {
     }
 
 
-    private  class SecuritiesAccountAdapter extends MultiItemViewAdapter<AccountBaseModel> {
-        private ViewHolder mViewHolder;
-        public SecuritiesAccountAdapter(Context context, List<AccountBaseModel> data) {
+    private  class SecurityAccountAdapter extends MultiItemViewAdapter<AccountBaseModel> {
+        public SecurityAccountAdapter(Context context, List<AccountBaseModel> data) {
             super(context, data);
             addItemViewDelegate(new AssetWidgetDelegate());
             addItemViewDelegate(new AccountDetailWidgetDelegate());
             addItemViewDelegate(new FunctionWidgetDelegate());
             addItemViewDelegate(new PositionOrderWidgetDelegate());
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull ViewHolder holder, int position)
-        {
-            super.onBindViewHolder(holder, position);
-            mViewHolder=holder;
         }
     }
 }

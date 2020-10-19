@@ -28,7 +28,6 @@ public class ShareActivity extends AppCompatActivity {
 
 	private List<ShareItem> mShareItemList=null;
 
-	private int curSelectedTab=0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

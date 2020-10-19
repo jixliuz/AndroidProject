@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.widget.TextView;
 
-import com.chauncy.account.model.bean.IconText;
+import com.chauncy.account.model.IconText;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -17,8 +17,8 @@ import com.chauncy.account.R;
 import com.chauncy.account.common.event.AccountEventHandler;
 import com.chauncy.account.common.event.Subject;
 import com.chauncy.account.model.AccountDataCenter;
-import com.chauncy.account.model.AccountInfo;
-import com.chauncy.account.model.SecurityAccount;
+import com.chauncy.account.model.bean.AccountInfo;
+import com.chauncy.account.model.bean.SecurityAccount;
 import com.chauncy.account.share.ShareConstant;
 import com.chauncy.account.share.ShareType;
 import com.chauncy.account.utils.AccountConstant;
@@ -35,10 +35,8 @@ import java.util.List;
 
 public class AssetWidgetDelegate implements ItemViewDelegate<AccountBaseModel> {
 
-
     private boolean isShow;
     private ViewHolder mViewHolder;
-    private AccountBaseModel mBaseModel;
     private SecurityAccount mAccount;
     private AccountInfo mAccountInfo;
     private Subject eventHandler;
@@ -59,10 +57,9 @@ public class AssetWidgetDelegate implements ItemViewDelegate<AccountBaseModel> {
     }
 
     @Override
-    public void convert(ViewHolder holder, AccountBaseModel accountBaseModel, int position) {
+    public void convert(ViewHolder holder, AccountBaseModel baseModel, int position) {
         mViewHolder = holder;
-        mBaseModel = accountBaseModel;
-        mAccount = mBaseModel.getAccount();
+        mAccount = baseModel.getAccount();
         SecurityAccount defaultAccount = AccountDataCenter.get().getDefaultAccount(mAccount.getAccountType());
         mAccount.setAccountID(defaultAccount.getAccountID());
         if (!isInited) {
@@ -168,7 +165,7 @@ public class AssetWidgetDelegate implements ItemViewDelegate<AccountBaseModel> {
     }
 
     private void initSpinnerList() {
-        List<SecurityAccount> accountBaseModels = AccountDataCenter.get().getAllAccount(mBaseModel.getAccountType());
+        List<SecurityAccount> accountBaseModels = AccountDataCenter.get().getAllAccount(mAccount.getAccountType());
         mSpinner = mViewHolder.getView(R.id.security_account_spinner);
         adapter = new SpannerAdapter(mViewHolder.getContext(), accountBaseModels);
         mSpinner.setAdapter(adapter);

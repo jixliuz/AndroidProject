@@ -3,7 +3,7 @@ package com.chauncy.account.utils
 import com.chauncy.account.R
 import com.chauncy.account.model.AccountDataCenter
 import com.chauncy.account.model.bean.AccountOrder
-import com.chauncy.account.model.bean.IconText
+import com.chauncy.account.model.IconText
 import com.chauncy.account.model.bean.Position
 import java.lang.StringBuilder
 import java.util.ArrayList

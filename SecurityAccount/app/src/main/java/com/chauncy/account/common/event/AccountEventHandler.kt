@@ -6,7 +6,6 @@ class AccountEventHandler {
     companion object {
         private val instances: AccountEventHandler by lazy { AccountEventHandler() }
 
-
         @JvmStatic
         fun get() = instances
     }

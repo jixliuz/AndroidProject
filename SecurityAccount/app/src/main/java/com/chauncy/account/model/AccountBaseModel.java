@@ -1,6 +1,7 @@
 package com.chauncy.account.model;
 
 
+import com.chauncy.account.model.bean.SecurityAccount;
 
 public class AccountBaseModel {
     private SecurityAccount mAccount;

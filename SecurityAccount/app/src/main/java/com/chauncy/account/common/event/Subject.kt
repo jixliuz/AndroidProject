@@ -1,6 +1,6 @@
 package com.chauncy.account.common.event
 
-import com.chauncy.account.model.SecurityAccount
+import com.chauncy.account.model.bean.SecurityAccount
 
 class Subject {
     private val observerList: MutableList<Observer> by lazy { mutableListOf<Observer>() }
