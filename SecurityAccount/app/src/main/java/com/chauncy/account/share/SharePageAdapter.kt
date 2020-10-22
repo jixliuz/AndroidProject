@@ -22,8 +22,7 @@ class SharePageAdapter constructor(private val shareStrategy: ShareStrategy):Rec
     }
 
     override fun getItemViewType(position: Int): Int {
-        val shareItems=shareStrategy.createShareItem()
-        if(shareItems[position]==ShareItem.POSITION_LIST)
+        if(mData[position]==ShareItem.POSITION_LIST)
             return ShareConstant.SHARE_PAGE_ITEM_POSITION_VIEW_TYPE
         return ShareConstant.SHARE_PAGE_ITEM_CONTEXT_VIEW_TYPE
     }

@@ -20,6 +20,7 @@ import com.chauncy.account.delegate.AccountDetailWidgetDelegate;
 import com.chauncy.account.delegate.AssetWidgetDelegate;
 import com.chauncy.account.delegate.FunctionWidgetDelegate;
 import com.chauncy.account.delegate.PositionOrderWidgetDelegate;
+import com.chauncy.account.model.AccountDataCenter;
 import com.chauncy.account.model.bean.SecurityAccount;
 import com.chauncy.account.utils.AccountConstant;
 import com.chauncy.account.model.AccountBaseModel;

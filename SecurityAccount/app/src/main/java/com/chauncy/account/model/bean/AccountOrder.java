@@ -3,8 +3,8 @@ package com.chauncy.account.model.bean;
 public class AccountOrder {
 
     private int id;
-    private String securityId;
-    private String securityName;
+    private String stockId;
+    private String stockName;
     private String accountId;
     private double orderPrice;
     private int orderAmount;
@@ -23,20 +23,20 @@ public class AccountOrder {
         this.id = id;
     }
 
-    public String getSecurityId() {
-        return securityId;
+    public String getStockId() {
+        return stockId;
     }
 
-    public void setSecurityId(String securityId) {
-        this.securityId = securityId;
+    public void setStockId(String stockId) {
+        this.stockId = stockId;
     }
 
-    public String getSecurityName() {
-        return securityName;
+    public String getStockName() {
+        return stockName;
     }
 
-    public void setSecurityName(String securityName) {
-        this.securityName = securityName;
+    public void setStockName(String stockName) {
+        this.stockName = stockName;
     }
 
     public String getAccountId()

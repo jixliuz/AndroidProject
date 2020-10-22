@@ -27,8 +27,8 @@ public class AccountOrderDao {
     public long insert(AccountOrder data) {
         ContentValues values = new ContentValues();
         values.put("id", data.getId());
-        values.put("securityId", data.getSecurityId());
-        values.put("securityName", data.getSecurityName());
+        values.put("securityId", data.getStockId());
+        values.put("securityName", data.getStockName());
         values.put("accountId", data.getAccountId());
         values.put("orderPrice", data.getOrderPrice());
         values.put("orderAmount", data.getOrderAmount());
@@ -52,8 +52,8 @@ public class AccountOrderDao {
         while (cursor.moveToNext()) {
             AccountOrder element = new AccountOrder();
             element.setId(cursor.getInt(0));
-            element.setSecurityName(cursor.getString(1));
-            element.setSecurityId(cursor.getString(2));
+            element.setStockName(cursor.getString(1));
+            element.setStockId(cursor.getString(2));
             element.setAccountId(cursor.getString(3));
             element.setOrderPrice(cursor.getDouble(4));
             element.setOrderAmount(cursor.getInt(5));
@@ -73,8 +73,8 @@ public class AccountOrderDao {
         while (cursor.moveToNext()) {
             AccountOrder element = new AccountOrder();
             element.setId(cursor.getInt(0));
-            element.setSecurityName(cursor.getString(1));
-            element.setSecurityId(cursor.getString(2));
+            element.setStockName(cursor.getString(1));
+            element.setStockId(cursor.getString(2));
             element.setAccountId(cursor.getString(3));
             element.setOrderPrice(cursor.getDouble(4));
             element.setOrderAmount(cursor.getInt(5));

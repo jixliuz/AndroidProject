@@ -14,7 +14,7 @@ public class SecurityAccount {
 
     public SecurityAccount(String accountType) {
         this.accountType = accountType;
-        id="";
+        id="UNKNOW";
     }
 
     public SecurityAccount(String cardID, String accountType) {

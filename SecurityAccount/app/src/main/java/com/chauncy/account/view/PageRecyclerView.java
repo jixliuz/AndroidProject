@@ -40,7 +40,7 @@ public class PageRecyclerView extends RecyclerView {
     @Override
     public void setAdapter(Adapter adapter) {
         super.setAdapter(adapter);
-        mPageIndicatorHelper.attachToRecyclerView(this);
+        mPageIndicatorHelper.setRecyclerView(this);
         if (mIndicatorView != null)
             mIndicatorView.initIndicator(adapter.getItemCount());
     }
@@ -56,14 +56,13 @@ public class PageRecyclerView extends RecyclerView {
         private RecyclerView mRecyclerView;
         private PageIndicatorView mIndicatorView;
 
-        private void setIndicatorView(PageIndicatorView indicatorView) {
+        public void setIndicatorView(@Nullable PageIndicatorView indicatorView) {
             mIndicatorView = indicatorView;
         }
 
-        @Override
-        public void attachToRecyclerView(@Nullable RecyclerView recyclerView) throws IllegalStateException {
-            super.attachToRecyclerView(recyclerView);
+        public void setRecyclerView(@NonNull RecyclerView recyclerView) {
             mRecyclerView = recyclerView;
+            super.attachToRecyclerView(recyclerView);
         }
 
 

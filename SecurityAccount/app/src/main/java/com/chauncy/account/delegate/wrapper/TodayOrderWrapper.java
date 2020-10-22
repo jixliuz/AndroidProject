@@ -232,8 +232,8 @@ public class TodayOrderWrapper {
         }
 
         private void showInfo(AccountOrder todayOrder) {
-            securityName.setText(todayOrder.getSecurityName());
-            securityId.setText(todayOrder.getSecurityId());
+            securityName.setText(todayOrder.getStockName());
+            securityId.setText(todayOrder.getStockId());
             orderPrice.setText(String.valueOf(todayOrder.getOrderPrice()));
             orderAmount.setText(String.valueOf(todayOrder.getOrderAmount()));
             succAmount.setText(String.valueOf(todayOrder.getSuccAmount()));

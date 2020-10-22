@@ -63,7 +63,7 @@ class AccountDataCenter {
         val accountList = cacheMap[accountType]
         if (accountList?.size == 0)
             return SecurityAccount(accountType)
-        val id = accountList?.get(0)?.accountId ?: ""
+        val id = accountList?.get(0)?.accountId ?: "UNKNOWN"
         return SecurityAccount(id, accountType)
     }
 
