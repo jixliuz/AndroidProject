@@ -60,8 +60,6 @@ public class AssetWidgetDelegate implements ItemViewDelegate<AccountBaseModel> {
     public void convert(ViewHolder holder, AccountBaseModel baseModel, int position) {
         mViewHolder = holder;
         mAccount = baseModel.getAccount();
-        SecurityAccount defaultAccount = AccountDataCenter.get().getDefaultAccount(mAccount.getAccountType());
-        mAccount.setAccountID(defaultAccount.getAccountID());
         if (!isInited) {
             isInited = true;
             eventHandler = AccountEventHandler.get().createSubject();

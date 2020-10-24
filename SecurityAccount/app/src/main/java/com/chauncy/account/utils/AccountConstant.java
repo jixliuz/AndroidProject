@@ -10,6 +10,8 @@ public class AccountConstant {
     public static final String ACCOUNT_TYPE_USA = "美股";
     public static final String ACCOUNT_TYPE_CN = "A股";
 
+    public static final String ACCOUNT_ID_DEFAULT_VALUE="UNKNOWN";
+
     public static final String ACCOUNT_FUNCTION_TYPE_CASH="CASH";
 
     public static final String ACCOUNT_FUNCTION_TYPE_MARGIN="MARGIN";

@@ -2,6 +2,7 @@ package com.chauncy.account.model
 
 import com.chauncy.account.model.bean.AccountInfo
 import com.chauncy.account.model.bean.SecurityAccount
+import com.chauncy.account.utils.AccountConstant
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import java.util.concurrent.locks.ReadWriteLock
@@ -63,7 +64,7 @@ class AccountDataCenter {
         val accountList = cacheMap[accountType]
         if (accountList?.size == 0)
             return SecurityAccount(accountType)
-        val id = accountList?.get(0)?.accountId ?: "UNKNOWN"
+        val id = accountList?.get(0)?.accountId ?: AccountConstant.ACCOUNT_ID_DEFAULT_VALUE
         return SecurityAccount(id, accountType)
     }
 
